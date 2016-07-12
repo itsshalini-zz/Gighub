@@ -43,7 +43,7 @@
         <ul>
             <%
             _.each(notifications, function(notification){
-            if(notfication.type == 1) {%>
+            if(notification.type == 1) {%>
             <li>
                 <%= notification.gig.artist.name%> has canceled the gig at <%=notification.gig.venue%> at <%= notification.gig.dateTime%>
             </li>
@@ -77,7 +77,7 @@
     </script>
     <script>
         $(document).ready(function () {
-            $getJSON("api/notifications", function (notifications) {
+            $.getJSON("api/notifications", function (notifications) {
                 if (notifications.length == 0)
                     return;
 
