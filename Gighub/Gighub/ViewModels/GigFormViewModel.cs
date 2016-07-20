@@ -33,10 +33,10 @@ namespace Gighub.ViewModels
         {
             get
             {
-                Expression<Func<GigsController, ActionResult>> update =
+                Expression<Func<Gigs, ActionResult>> update =
                     (c=> c.Update(this));
 
-                Expression<Func<GigsController, ActionResult>> create =
+                Expression<Func<Gigs, ActionResult>> create =
                     (c => c.Create(this));
 
                 var action = (Id != 0) ? update : create;
